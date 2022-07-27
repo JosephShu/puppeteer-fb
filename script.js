@@ -14,10 +14,7 @@ const setting = {
   proxy: `https://${IP}`,
 };
 
-console.log(ACC, PASS, QUERY, ITEM_COUNT);
-
 // Helper function
-
 function extractItems() {
   const extractedElements = document.querySelectorAll(
     '[role="feed"] > [role="article"] > div > div > div > div > div > div > div > div > div > div > div > span > div > a'
@@ -110,7 +107,7 @@ async function main() {
     headless: HEADLESS,
     userDataDir: "./userData",
     ignoreDefaultArgs: ["--disable-extensions"],
-    // args: [`--proxy-server=${proxy(ip)}`],
+    args: [`--proxy-server=${proxy(ip)}`],
   });
 
   const page = await browser.newPage();
